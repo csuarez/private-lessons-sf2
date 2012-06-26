@@ -6,10 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="book")
- * @ORM\Entity(repositoryClass="PrivateLessons\DocManagerBundle\Repository\BookRepository")
+ * @ORM\Table(name="document")
  */
-class Book {
+class Document {
 	/**
 	 * @ORM\Id
 	 * @ORM\Column(type="integer")
@@ -28,15 +27,15 @@ class Book {
 	protected $year;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Author", inversedBy="books")
+     * @ORM\ManyToOne(targetEntity="Author", inversedBy="documents")
      * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
      */
     protected $author;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Category", inversedBy="books", cascade={"all"})
-     * @ORM\JoinTable(name="categories_books",
-     *      joinColumns={@ORM\JoinColumn(name="book_id", referencedColumnName="id")},
+     * @ORM\ManyToMany(targetEntity="Category", inversedBy="documents", cascade={"all"})
+     * @ORM\JoinTable(name="categories_documents",
+     *      joinColumns={@ORM\JoinColumn(name="document_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="category_id", referencedColumnName="id")}
      *  )
      */

@@ -22,16 +22,16 @@ class Author {
     protected $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="Book", mappedBy="author")
+     * @ORM\OneToMany(targetEntity="Document", mappedBy="author")
      */
-    protected $books;
+    protected $documents;
 
     /*
      * Constructor
      */
     public function __construct()
     {
-        $this->books = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->documents = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -65,23 +65,23 @@ class Author {
     }
     
     /**
-     * Add books
+     * Add documents
      *
-     * @param PrivateLessons\DocManagerBundle\Entity\Book $books
+     * @param PrivateLessons\DocManagerBundle\Entity\Document $documents
      */
-    public function addBook(\PrivateLessons\DocManagerBundle\Entity\Book $books)
+    public function addDocument(\PrivateLessons\DocManagerBundle\Entity\Document $documents)
     {
-        $this->books[] = $books;
+        $this->documents[] = $documents;
     }
 
     /**
-     * Get books
+     * Get documents
      *
      * @return Doctrine\Common\Collections\Collection 
      */
-    public function getBooks()
+    public function getDocuments()
     {
-        return $this->books;
+        return $this->documents;
     }
 }
 
