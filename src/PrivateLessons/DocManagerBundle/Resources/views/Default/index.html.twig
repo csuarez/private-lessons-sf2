@@ -40,10 +40,18 @@
 							<th>Categories</th>
 							<th></th>
 						</tr>
+						{% for document in documents %}
 						<tr>
-							<td>title_1</td>
-							<td>author_1</td>
-							<td>category_1, category_2</td>
+							<td>{{ document.title }}</td>
+							<td>{{ document.author.name }}</td>
+							<td>
+								{% for category in document.categories %}
+									{{ category.name }}
+									{%- if not loop.last -%}
+										,
+									{%- endif -%}
+								{% endfor %}
+							</td>
 							<td>
 								<div class="btn-group">
  									<button class="btn btn-mini">Download</button>
@@ -57,74 +65,7 @@
 								</div>
 							</td>
 						</tr>
-						<tr>
-							<td>title_1</td>
-							<td>author_1</td>
-							<td>category_1, category_2</td>
-							<td>
-								<div class="btn-group">
- 									<button class="btn btn-mini">Download</button>
-  									<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
-    									<span class="caret"></span>
-  									</button>
-  									<ul class="dropdown-menu">
-    									<li><a href="#">Edit</a></li>
-    									<li><a href="#">Delete</a></li>
-  									</ul>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>title_1</td>
-							<td>author_1</td>
-							<td>category_1, category_2</td>
-							<td>
-								<div class="btn-group">
- 									<button class="btn btn-mini">Download</button>
-  									<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
-    									<span class="caret"></span>
-  									</button>
-  									<ul class="dropdown-menu">
-    									<li><a href="#">Edit</a></li>
-    									<li><a href="#">Delete</a></li>
-  									</ul>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>title_1</td>
-							<td>author_1</td>
-							<td>category_1, category_2</td>
-							<td>
-								<div class="btn-group">
- 									<button class="btn btn-mini">Download</button>
-  									<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
-    									<span class="caret"></span>
-  									</button>
-  									<ul class="dropdown-menu">
-    									<li><a href="#">Edit</a></li>
-    									<li><a href="#">Delete</a></li>
-  									</ul>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>title_1</td>
-							<td>author_1</td>
-							<td>category_1, category_2</td>
-							<td>
-								<div class="btn-group">
- 									<button class="btn btn-mini">Download</button>
-  									<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
-    									<span class="caret"></span>
-  									</button>
-  									<ul class="dropdown-menu">
-    									<li><a href="#">Edit</a></li>
-    									<li><a href="#">Delete</a></li>
-  									</ul>
-								</div>
-							</td>
-						</tr>
+						{% endfor %}
 					</table>
 				</div>
 			</div>

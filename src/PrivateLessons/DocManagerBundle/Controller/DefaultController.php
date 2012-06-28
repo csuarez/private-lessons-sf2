@@ -14,6 +14,10 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        $documents = $this->getDoctrine()
+                    ->getRepository('PrivateLessonsDocManagerBundle:Document')
+                    ->findAll();
+
+        return(array('documents' => $documents));
     }
 }
