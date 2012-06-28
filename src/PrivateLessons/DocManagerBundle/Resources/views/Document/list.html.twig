@@ -21,16 +21,7 @@
 			{% endfor %}
 		</td>
 		<td>
-			<div class="btn-group">
-				<button class="btn btn-mini">Download</button>
-				<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
-					<span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu">
-					<li><a href="#">Edit</a></li>
-					<li><a href="#">Delete</a></li>
-				</ul>
-			</div>
+			{% include "PrivateLessonsDocManagerBundle:Document:actions.html.twig" %}
 		</td>
 	</tr>
 	{% endfor %}
