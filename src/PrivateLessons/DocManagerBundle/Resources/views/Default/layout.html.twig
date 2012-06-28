@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DocManager</title>
+		{% block stylesheets %}
+		<link href="{{ asset('bundles/privatelessonsdocmanager/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('bundles/privatelessonsdocmanager/css/styles.css') }}" rel="stylesheet" type="text/css" />
+		{% endblock %}
+
+		{% block javascripts %}
+		<script type="text/javascript" src="{{ asset('bundles/privatelessonsdocmanager/js/jquery-1.7.2.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('bundles/privatelessonsdocmanager/js/bootstrap.js') }}"></script>
+		{% endblock %}
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<div class="navbar navbar-fixed-top">
+  						<div class="navbar-inner">
+    						<div class="container">
+      							<a class="brand" href="#">DocManager</a>
+    						</div>
+  						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<ul class="nav nav-tabs">
+  						<li><a href="#">Documents</a></li>
+  						<li><a href="#">Authors</a></li>
+  						<li><a href="#">Categories</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					{% block content %}
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
