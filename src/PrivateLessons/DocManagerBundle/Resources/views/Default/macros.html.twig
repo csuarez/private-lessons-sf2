@@ -1,0 +1,5 @@
+{% macro checkActive(controllerName) %}
+	{%- if app.request.attributes.get('_template').get('controller') == controllerName -%}
+		class="active"
+	{%- endif -%}
+{% endmacro %}

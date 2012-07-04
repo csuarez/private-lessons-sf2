@@ -1,0 +1,15 @@
+{% import "PrivateLessonsDocManagerBundle:Default:macros.html.twig" as macros %}
+
+<ul class="nav nav-tabs">
+	<li {{ macros.checkActive('Document') }}>
+		<a href="{{ path('document_list') }}">Documents</a>
+	</li>
+
+	<li {{ macros.checkActive('Author') }}>
+		<a href="{{ path('author_list') }}">Authors</a>
+	</li>
+
+	<li {{ macros.checkActive('Category') }}>
+		<a href="{{ path('category_list') }}">Categories</a>
+	</li>
+</ul>
